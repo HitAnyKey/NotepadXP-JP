@@ -81,7 +81,7 @@ BEGIN
             MENUITEM    "新規(&N)\tCtrl+N",							M_NEW
 			MENUITEM	"新しいウィンドウ(&W)\tCtrl+Shift+N",			M_NEWWIN
             MENUITEM    "開く(&O)...\tCtrl+O",						M_OPEN
-            MENUITEM    "上書きほぞ(&S)\tCtrl+S",						M_SAVE
+            MENUITEM    "上書き保存(&S)\tCtrl+S",						M_SAVE
             MENUITEM    "名前を付けて保存(&A)...\tCtrl+Shift+S",			M_SAVEAS
             MENUITEM    SEPARATOR
             MENUITEM    "ページ設定(&U)...",						M_PAGESETUP
@@ -90,36 +90,36 @@ BEGIN
             MENUITEM    "メモ帳の終了(&X)",								M_EXIT
         END
 
-    POPUP   "&Edit"
+    POPUP   "編集(&E)"
         BEGIN
-            MENUITEM    "&Undo\tCtrl+Z",        M_UNDO
+            MENUITEM    "元に戻す(&U)\tCtrl+Z",        M_UNDO
             MENUITEM    SEPARATOR
-            MENUITEM    "Cu&t\tCtrl+X",         M_CUT ,  GRAYED
-            MENUITEM    "&Copy\tCtrl+C",        M_COPY,  GRAYED
-            MENUITEM    "&Paste\tCtrl+V",       M_PASTE, GRAYED
-            MENUITEM    "De&lete\tDel",         M_CLEAR, GRAYED
+            MENUITEM    "切り取り(&T)\tCtrl+X",         M_CUT ,  GRAYED
+            MENUITEM    "コピー(&C)\tCtrl+C",        M_COPY,  GRAYED
+            MENUITEM    "貼り付け(&P)\tCtrl+V",       M_PASTE, GRAYED
+            MENUITEM    "削除(&L)\tDel",         M_CLEAR, GRAYED
             MENUITEM    SEPARATOR
-            MENUITEM    "&Find...\tCtrl+F",     M_FIND
-            MENUITEM    "Find &Next\tF3",       M_FINDNEXT
+            MENUITEM    "検索(&F)...\tCtrl+F",     M_FIND
+            MENUITEM    "次を検索(&N)\tF3",       M_FINDNEXT
 			MENUITEM	"Find Pre&vious\tShift+F3", M_FINDPREVIOUS
-            MENUITEM    "&Replace...\tCtrl+H",  M_REPLACE
+            MENUITEM    "置換(&R)...\tCtrl+H",  M_REPLACE
 /*
             The hotkey used for replace is CTRL-H in most of the editors, and hence though 
             this key may conflict with backspace key in IMEs, this key is used here to be compatible
             with all the editors. Please contact ChrisW/RajeshM for more details.
 */
-            MENUITEM    "&Go To...\tCtrl+G",    M_GOTO
+            MENUITEM    "行へ移動(&G)...\tCtrl+G",    M_GOTO
             MENUITEM    SEPARATOR
-            MENUITEM    "Select &All\tCtrl+A",  M_SELECTALL
-            MENUITEM    "Time/&Date\tF5",       M_DATETIME
+            MENUITEM    "すべて選択(&A)\tCtrl+A",  M_SELECTALL
+            MENUITEM    "日付と時刻(&D)\tF5",       M_DATETIME
         END
 
-    POPUP   "F&ormat"
+    POPUP   "書式(&O)"
         BEGIN
-            MENUITEM    "&Word Wrap"      M_WW
-            MENUITEM    "&Font...",       M_SETFONT
+            MENUITEM    "右端で折り返す(&W)"      M_WW
+            MENUITEM    "フォント(&F)...",       M_SETFONT
 
-			POPUP		"&Tab Width"
+			POPUP		"タブ文字の幅(&T)"
 				BEGIN
 					MENUITEM	"&2"		M_TW2
 					MENUITEM	"&4"		M_TW4
@@ -127,16 +127,16 @@ BEGIN
 				END
         END
 
-    POPUP   "&View"
+    POPUP   "表示(&V)"
         BEGIN
-            MENUITEM "&Status Bar",             M_STATUSBAR
+            MENUITEM "ステータス バー(&S)",             M_STATUSBAR
         END
 
-    POPUP "&Help"
+    POPUP "ヘルプ(&H)"
         BEGIN
-            MENUITEM     "View &Help",  M_HELP
+            MENUITEM     "トピックの検索(&H)",  M_HELP
             MENUITEM     SEPARATOR
-            MENUITEM     "&About Notepad",M_ABOUT
+            MENUITEM     "バージョン情報(&A)",M_ABOUT
         END
 
 END
@@ -195,62 +195,62 @@ END
 STRINGTABLE PRELOAD DISCARDABLE
 BEGIN
     IDS_MERGE1       "%%"
-    IDS_DISKERROR   "Cannot open the %% file.\n\nMake sure a disk is in the drive you specified."
-    IDS_FNF         "Cannot find the %% file.\n\nDo you want to create a new file?"
-    IDS_SCBC        "The text in the %% file has changed.\n\nDo you want to save the changes?"
+    IDS_DISKERROR   "ファイル %% を開くことができません。\n\n指定したドライブにディスクがあるか確認してください。"
+    IDS_FNF         "ファイル %% が見つかりません。\n\n新しく作成しますか?"
+    IDS_SCBC        "ファイル %% の内容は変更されています。\n\n変更を保存しますか?"
     IDS_UNTITLED    "無題"
     IDS_NOTEPAD     " - メモ帳"
-    IDS_CFS         "Cannot find ""%%"""
+    IDS_CFS         """%%"" が見つかりません。"
     /* The following is a generic out of memory message which can also be
        system modal so no /n can appear in it. */
-    IDS_ERRSPACE    "Not enough memory available to complete this operation. Quit one or more applications to increase available memory, and then try again."
-    IDS_FTL         "The %% file is too large for Notepad.\n\nUse another editor to edit the file."
-    IDS_NN          "Notepad"
-    IDS_COMMDLGINIT "Failed to Initialize File Dialogs. Change the Filename and try again."
-    IDS_PRINTDLGINIT "Failed to Initialize Print Dialogs. Make sure that your printer is connected properly and use Control Panel to verify that the printer is configured properly."
-    IDS_CANTPRINT   "Cannot print the %% file. Be sure that your printer is connected properly and use Control Panel to verify that the printer is configured properly."
-    IDS_NVF         "Not a valid file name."
-    IDS_CREATEERR   "Cannot create the %% file.\n\nMake sure that the path and filename are correct."
-    IDS_NOWW        "Cannot carry out the Word Wrap command because there is too much text in the file."
+    IDS_ERRSPACE    "メモリ不足のためこの操作を実行できません。Windows アプリケーションをいくつか終了して空きメモリ領域を増やしてから、再実行してください。"
+    IDS_FTL         "ファイル %% は大きすぎてメモ帳では編集できません。\n\n別のエディタを使って編集してください。"
+    IDS_NN          "メモ帳"
+    IDS_COMMDLGINIT "ファイルのダイアログを初期化できませんでした。ファイル名を変更してやり直してください。"
+    IDS_PRINTDLGINIT "印刷のダイアログを初期化できませんでした。プリンタが正しく接続されていることを確認してから、コントロール パネルを使ってプリンタが正しく構成されていることを確認してください。"
+    IDS_CANTPRINT   "ファイル %% を印刷できません。プリンタの接続を確認してください。また、コントロール パネルでプリンタの構成を確認してください。"
+    IDS_NVF         "ファイル名が無効です。"
+    IDS_CREATEERR   "ファイル %% を作成できません。\n\nパスおよびファイル名が正しいか確認してください。"
+    IDS_NOWW        "ファイル中の文字が多すぎるため、[右端で折り返す] コマンドを実行できません。"
     IDS_HELPFILE    "notepad.hlp"
     IDS_HEADER      "&f"
-    IDS_FOOTER      "Page &p"
+    IDS_FOOTER      "ページ(&P)"
 
-    IDS_ACCESSDENY  "%%\nYou do not have permission to open this file.  See the owner of the file or an administrator to obtain permission."
+    IDS_ACCESSDENY  "%%\nこのファイルを開くためのアクセス許可がありません。このファイルの所有者または管理者に問い合わせてアクセス許可を取得してください。"
 
 
-    IDS_ANSITEXT    "Text Documents (*.txt)" /* filter text for File/Open */
-    IDS_ALLFILES    "All Files "   /* filter text for File/Open  */
-    IDS_OPENCAPTION "Open"      /* title for file/open dialog */
-    IDS_SAVECAPTION "Save As"   /* title for file/save dialog */
-    IDS_CANNOTQUIT  "You cannot quit Windows because the Save As dialog\nbox in Notepad is open.  Switch to Notepad, close this\ndialog box, and then try quitting Windows again."
-    IDS_LOADDRVFAIL "Cannot access your printer.\nBe sure that your printer is connected properly and use Control Panel to verify that the printer is configured properly."
-    IDS_ERRUNICODE  "%%\n This file contains characters in Unicode format which will be lost if you save this file as an ANSI encoded text file. To keep the Unicode information, click Cancel below and then select one of the Unicode options from the Encoding drop down list. Continue?"
-    IDS_FONTTOOBIG  "Page too small to print one line.\nTry printing using smaller font."
-    IDS_COMMDLGERR  "Common Dialog error (0x%04x)"
+    IDS_ANSITEXT    "テキスト文書 (*.txt)" /* filter text for File/Open */
+    IDS_ALLFILES    "すべてのファイル "   /* filter text for File/Open  */
+    IDS_OPENCAPTION "開く"      /* title for file/open dialog */
+    IDS_SAVECAPTION "名前を付けて保存"   /* title for file/save dialog */
+    IDS_CANNOTQUIT  "メモ帳の [名前を付けて保存] ダイアログ ボックスが開かれているため、\nWindows を終了できません。メモ帳に切り替えてダイアログ ボックスを\n閉じてから、やり直してください。"
+    IDS_LOADDRVFAIL "プリンタにアクセスできません。\nプリンタが正しく接続されているか確認してください。プリンタが適切に構成されているか確認するには、コントロール パネルを使用してください。"
+    IDS_ERRUNICODE  "%%\n このファイルは、ANSI テキスト ファイルとして保存すると失われてしまう Unicode 形式の文字を含んでいます。Unicode の情報を保存するには、下の [キャンセル] をクリックし、[文字コード] から [Unicode] を選択してください。続行しますか?"
+    IDS_FONTTOOBIG  "1 行の長さに対して、ページ サイズが小さすぎます。\nより小さいフォントを使って印刷してみてください。"
+    IDS_COMMDLGERR  "コモン ダイアログ エラー (0x%04x)"
 
-    IDS_LINEERROR    "Notepad - Goto Line"
-    IDS_LINETOOLARGE "Line number out of range"
+    IDS_LINEERROR    "メモ帳 - 行に移動"
+    IDS_LINETOOLARGE "行番号が範囲外です"
 
     IDS_FT_ANSI      "ANSI"
     IDS_FT_UNICODE   "Unicode"
     IDS_FT_UNICODEBE "Unicode big endian"
     IDS_FT_UTF8      "UTF-8"
 
-    IDS_CURRENT_PAGE "Page %d"  /* don't change %d; used for printf formatting */
+    IDS_CURRENT_PAGE "ページ %d"  /* don't change %d; used for printf formatting */
 
-    IDS_LINECOL          "   Ln %d, Col %d  "
-    IDS_COMPRESSED_FILE  " Compressed,"
-    IDS_ENCRYPTED_FILE   " Encrypted,"
-    IDS_HIDDEN_FILE      " Hidden,"
-    IDS_OFFLINE_FILE     " Offline,"
-    IDS_READONLY_FILE    " ReadOnly,"
-    IDS_SYSTEM_FILE      " System,"
-    IDS_FILE             " File"
+    IDS_LINECOL          "   %d 行、%d 列  "
+    IDS_COMPRESSED_FILE  " 圧縮、"
+    IDS_ENCRYPTED_FILE   " 暗号化、"
+    IDS_HIDDEN_FILE      " 非表示、"
+    IDS_OFFLINE_FILE     " オフライン、"
+    IDS_READONLY_FILE    " 読み取り専用、"
+    IDS_SYSTEM_FILE      " システム、"
+    IDS_FILE             " ファイル"
 
     /* Use by MUI, not notepad.  See hivecls.inx for reference */
 
-    IDS_TEXT_FRIENDLY_NAME  "Text Document"
+    IDS_TEXT_FRIENDLY_NAME  "テキスト ドキュメント"
 
     /*  IDS_LETTERS     "fFpPtTdDcCrRlL"   Original US values.  This does get translated! */
     /*                  The order is: File, Page, Time, Date, Center, Right, Left         */
