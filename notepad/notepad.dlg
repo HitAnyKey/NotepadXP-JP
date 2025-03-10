@@ -83,7 +83,7 @@ BEGIN
 
     AUTOCHECKBOX    "単語単位で探す(&W)", chx1, 4, 30, 97, 12, WS_GROUP
     AUTOCHECKBOX    "大文字と小文字を区別する(&C)", chx2, 4, 46, 116, 12
-	AUTOCHECKBOX	"先頭/末尾から再検索(&A)", chx3, 6, 58, 85, 12
+	AUTOCHECKBOX	"先頭/末尾から再検索(&A)", chx3, 4, 62, 85, 12
 
     GROUPBOX        "検索する方向", grp1, 125, 31, 88, 28, WS_GROUP
     AUTORADIOBUTTON "上へ(&U)", rad1, 129, 42, 39, 12, WS_GROUP
@@ -109,7 +109,7 @@ BEGIN
 
     AUTOCHECKBOX    "単語単位で探す(&W)", chx1, 8, 51, 104, 12, WS_GROUP
     AUTOCHECKBOX    "大文字と小文字を区別する(&C)", chx2, 8, 67, 124, 12
-	AUTOCHECKBOX	"先頭/末尾から再検索(&A)", chx3, 6, 78, 85, 12
+	AUTOCHECKBOX	"先頭/末尾から再検索(&A)", chx3, 8, 83, 85, 12
 
     DEFPUSHBUTTON   "次を検索(&F)", IDOK, 204, 4, 63, 14, WS_GROUP
     PUSHBUTTON      "置換して次に(&R)", psh1, 204, 22, 63, 14
