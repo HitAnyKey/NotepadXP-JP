@@ -101,7 +101,7 @@ BEGIN
             MENUITEM    SEPARATOR
             MENUITEM    "検索(&F)...\tCtrl+F",     M_FIND
             MENUITEM    "次を検索(&N)\tF3",       M_FINDNEXT
-			MENUITEM	"Find Pre&vious\tShift+F3", M_FINDPREVIOUS
+			MENUITEM	"前を検索(&V)\tShift+F3", M_FINDPREVIOUS
             MENUITEM    "置換(&R)...\tCtrl+H",  M_REPLACE
 /*
             The hotkey used for replace is CTRL-H in most of the editors, and hence though 
