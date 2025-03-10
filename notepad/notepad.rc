@@ -68,7 +68,7 @@ BEGIN
 	}
 
 	BLOCK "VarFileInfo" {
-		VALUE "Translation", 0x0409 0x04B0
+		VALUE "Translation", 0x0411 0x04B0
 	}
 END
 
@@ -76,18 +76,18 @@ ID_ICON    ICON PRELOAD DISCARDABLE     notepad.ico
 
 ID_MENUBAR  MENU PRELOAD DISCARDABLE
 BEGIN
-    POPUP   "&File"
+    POPUP   "ファイル(&F)"
         BEGIN
-            MENUITEM    "&New\tCtrl+N",							M_NEW
-			MENUITEM	"New &Window\tCtrl+Shift+N",			M_NEWWIN
-            MENUITEM    "&Open...\tCtrl+O",						M_OPEN
-            MENUITEM    "&Save\tCtrl+S",						M_SAVE
-            MENUITEM    "Save &As...\tCtrl+Shift+S",			M_SAVEAS
+            MENUITEM    "新規(&N)\tCtrl+N",							M_NEW
+			MENUITEM	"新しいウィンドウ(&W)\tCtrl+Shift+N",			M_NEWWIN
+            MENUITEM    "開く(&O)...\tCtrl+O",						M_OPEN
+            MENUITEM    "上書きほぞ(&S)\tCtrl+S",						M_SAVE
+            MENUITEM    "名前を付けて保存(&A)...\tCtrl+Shift+S",			M_SAVEAS
             MENUITEM    SEPARATOR
-            MENUITEM    "Page Set&up...",						M_PAGESETUP
-            MENUITEM    "&Print...\tCtrl+P",					M_PRINT
+            MENUITEM    "ページ設定(&U)...",						M_PAGESETUP
+            MENUITEM    "印刷(&P)...\tCtrl+P",					M_PRINT
             MENUITEM    SEPARATOR
-            MENUITEM    "E&xit",								M_EXIT
+            MENUITEM    "メモ帳の終了(&X)",								M_EXIT
         END
 
     POPUP   "&Edit"
@@ -198,8 +198,8 @@ BEGIN
     IDS_DISKERROR   "Cannot open the %% file.\n\nMake sure a disk is in the drive you specified."
     IDS_FNF         "Cannot find the %% file.\n\nDo you want to create a new file?"
     IDS_SCBC        "The text in the %% file has changed.\n\nDo you want to save the changes?"
-    IDS_UNTITLED    "Untitled"
-    IDS_NOTEPAD     " - Notepad"
+    IDS_UNTITLED    "無題"
+    IDS_NOTEPAD     " - メモ帳"
     IDS_CFS         "Cannot find ""%%"""
     /* The following is a generic out of memory message which can also be
        system modal so no /n can appear in it. */
