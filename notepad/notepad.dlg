@@ -5,57 +5,57 @@
 
 IDD_ABORTPRINT DIALOG 20,20,WIDTHPRINTDLG, 64
     STYLE WS_POPUPWINDOW | DS_MODALFRAME | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-    CAPTION "Notepad"
-    FONT 8 "MS Shell Dlg"
+    CAPTION "メモ帳"
+    FONT 9 "MS UI Gothic"
     BEGIN
-       defpushbutton "Cancel"   IDCANCEL, 84, 44, 32, 14, GRP
-       ctext    "Now Printing",  -1, 0, 8, WIDTHPRINTDLG, 8
+       defpushbutton "キャンセル"   IDCANCEL, 84, 44, 32, 14, GRP
+       ctext    "印刷中",  -1, 0, 8, WIDTHPRINTDLG, 8
        ctext    "",             ID_FILENAME, 0, 18, WIDTHPRINTDLG, 8,  SS_PATHELLIPSIS | SS_CENTER
        ctext    "",             ID_PAGENUMBER, 0, 28, WIDTHPRINTDLG, 8, SS_CENTER
     END
 
 NpEncodingDialog DIALOG 30, 17, 300, 22
 STYLE WS_CHILD | DS_3DLOOK | WS_CLIPSIBLINGS | DS_CONTEXTHELP | DS_CONTROL
-FONT 8, "MS Shell Dlg"
+FONT 9, "MS UI Gothic"
 BEGIN
-    CONTROL "&Encoding:", IDC_ENCODING, "static" SS_LEFT , 68,1, 40,40
+    CONTROL "文字コード(&E):", IDC_ENCODING, "static" SS_LEFT , 68,1, 56,40
     COMBOBOX IDC_FILETYPE, 130,0, 164,100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_GROUP | WS_TABSTOP
 END
 
 IDD_PAGESETUP DIALOG DISCARDABLE 0, 0, 356, 196
 STYLE DS_MODALFRAME | 4L | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | DS_CONTEXTHELP
-CAPTION "Page Setup"
-FONT 8, "MS Shell Dlg"
+CAPTION "ページ設定"
+FONT 9, "MS UI Gothic"
 BEGIN
-    GROUPBOX        "Paper",1073,8,8,224,56,WS_GROUP
-    LTEXT           "Si&ze:",1089,16,24,36,8
+    GROUPBOX        "用紙",1073,8,8,224,56,WS_GROUP
+    LTEXT           "サイズ(&Z):",1089,16,25,36,8
     COMBOBOX        1137,64,23,160,160,CBS_DROPDOWNLIST | CBS_SORT |
                     WS_VSCROLL | WS_GROUP | WS_TABSTOP
-    LTEXT           "&Source:",1090,16,45,36,8
+    LTEXT           "給紙方法(&S):",1090,16,44,45,8
     COMBOBOX        1138,64,42,160,160,CBS_DROPDOWNLIST | CBS_SORT |
                     WS_VSCROLL | WS_GROUP | WS_TABSTOP
-    GROUPBOX        "Orientation",1072,8,69,64,56,WS_GROUP
-    CONTROL         "P&ortrait",1056,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
-                    WS_TABSTOP,16,82,52,12
-    CONTROL         "L&andscape",1057,"Button",BS_AUTORADIOBUTTON,16,103,52,
+    GROUPBOX        "印刷の向き",1072,8,69,64,56,WS_GROUP
+    CONTROL         "縦(&O)",1056,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,16,83,52,12
+    CONTROL         "横(&A)",1057,"Button",BS_AUTORADIOBUTTON,16,102,52,
                     12
-    GROUPBOX        "Margins",1075,80,69,152,56,WS_GROUP
-    LTEXT           "&Left:",1102,88,85,32,8
-    EDITTEXT        1155,120,82,28,12,WS_GROUP
-    LTEXT           "&Right:",1103,164,85,32,8
-    EDITTEXT        1157,196,82,28,12,WS_GROUP
-    LTEXT           "&Top:",1104,88,104,32,8
-    EDITTEXT        1156,120,103,28,12,WS_GROUP
-    LTEXT           "&Bottom:",1105,164,104,32,8
-    EDITTEXT        1158,196,103,28,12,WS_GROUP
-    LTEXT           "&Header:",ID_HEADER_LABEL,8,135,29,8
+    GROUPBOX        "余白",1075,80,69,152,56,WS_GROUP
+    LTEXT           "左(&L):",1102,88,85,32,8
+    EDITTEXT        1155,120,83,28,12,WS_GROUP
+    LTEXT           "右(&R):",1103,164,85,32,8
+    EDITTEXT        1157,196,83,28,12,WS_GROUP
+    LTEXT           "上(&T):",1104,88,104,32,8
+    EDITTEXT        1156,120,102,28,12,WS_GROUP
+    LTEXT           "下(&B):",1105,164,104,32,8
+    EDITTEXT        1158,196,102,28,12,WS_GROUP
+    LTEXT           "ヘッダー(&H):",ID_HEADER_LABEL,8,136,35,8
     EDITTEXT        ID_HEADER,56,134,174,12,ES_AUTOHSCROLL
-    LTEXT           "&Footer:",ID_FOOTER_LABEL,8,154,29,8
+    LTEXT           "フッター(&F):",ID_FOOTER_LABEL,8,155,35,8
     EDITTEXT        ID_FOOTER,56,153,174,12,ES_AUTOHSCROLL
-    DEFPUSHBUTTON   "OK",IDOK,190,174,50,14,WS_GROUP
-    PUSHBUTTON      "Cancel",IDCANCEL,244,174,50,14
-    PUSHBUTTON      "&Printer...",1026,298,174,50,14
-    GROUPBOX        "Preview",-1,240,8,108,158
+    DEFPUSHBUTTON   "OK",IDOK,180,174,50,14,WS_GROUP
+    PUSHBUTTON      "キャンセル",IDCANCEL,234,174,50,14
+    PUSHBUTTON      "プリンタの設定(&P)...",1026,288,174,50,14
+    GROUPBOX        "印刷プレビュー",-1,240,8,108,158
     CONTROL         "",1080,"Static",SS_WHITERECT,254,46,80,80
     CONTROL         "",1081,"Static",SS_GRAYRECT,334,50,4,80
     CONTROL         "",1082,"Static",SS_GRAYRECT,262,122,80,4
@@ -72,49 +72,49 @@ BEGIN
     PUSHBUTTON      "キャンセル",IDCANCEL,78,34,50,14
 END
 
-IDD_FINDDIALOG DIALOG LOADONCALL MOVEABLE DISCARDABLE 30, 73, 236, 74
+IDD_FINDDIALOG DIALOG LOADONCALL MOVEABLE DISCARDABLE 30, 73, 275, 74
 STYLE WS_BORDER | WS_CAPTION | DS_MODALFRAME | WS_POPUP | WS_SYSMENU |
       DS_3DLOOK
-CAPTION "Find"
-FONT 8, "MS Shell Dlg"
+CAPTION "検索"
+FONT 9, "MS UI Gothic"
 BEGIN
-    LTEXT           "Fi&nd what:", -1, 4, 8, 42, 8
-    EDITTEXT        edt1, 47, 7, 128, 12, WS_GROUP | WS_TABSTOP | ES_AUTOHSCROLL
+    LTEXT           "検索する文字列(&N):", -1, 4, 9, 67, 9
+    EDITTEXT        edt1, 75, 7, 138, 12, WS_GROUP | WS_TABSTOP | ES_AUTOHSCROLL
 
-    AUTOCHECKBOX    "Match &whole word only", chx1, 6, 26, 100, 12, WS_GROUP
-    AUTOCHECKBOX    "Match &case", chx2, 6, 42, 64, 12
-	AUTOCHECKBOX	"Wrap &around", chx3, 6, 58, 70, 12
+    AUTOCHECKBOX    "単語単位で探す(&W)", chx1, 4, 30, 97, 12, WS_GROUP
+    AUTOCHECKBOX    "大文字と小文字を区別する(&C)", chx2, 4, 46, 116, 12
+	AUTOCHECKBOX	"先頭/末尾から再検索(&A)", chx3, 6, 58, 85, 12
 
-    GROUPBOX        "Direction", grp1, 107, 26, 68, 28, WS_GROUP
-    AUTORADIOBUTTON "&Up", rad1, 111, 38, 25, 12, WS_GROUP
-    AUTORADIOBUTTON "&Down", rad2, 138, 38, 35, 12
+    GROUPBOX        "検索する方向", grp1, 125, 31, 88, 28, WS_GROUP
+    AUTORADIOBUTTON "上へ(&U)", rad1, 129, 42, 39, 12, WS_GROUP
+    AUTORADIOBUTTON "下へ(&D)", rad2, 171, 42, 39, 12
 
-    DEFPUSHBUTTON   "&Find Next", IDOK, 182, 5, 50, 14, WS_GROUP
-    PUSHBUTTON      "Cancel", IDCANCEL, 182, 23, 50, 14
-    PUSHBUTTON      "&Help", pshHelp, 182, 45, 50, 14
+    DEFPUSHBUTTON   "次を検索(&F)", IDOK, 220, 5, 50, 14, WS_GROUP
+    PUSHBUTTON      "キャンセル", IDCANCEL, 220, 23, 50, 14
+    PUSHBUTTON      "ヘルプ(&H)", pshHelp, 220, 45, 50, 14
 END
 
 
-IDD_REPLACEDIALOG DIALOG LOADONCALL MOVEABLE DISCARDABLE 36, 44, 230, 94
+IDD_REPLACEDIALOG DIALOG LOADONCALL MOVEABLE DISCARDABLE 29, 44, 274, 101
 STYLE WS_BORDER | WS_CAPTION | DS_MODALFRAME | WS_POPUP | WS_SYSMENU |
       DS_3DLOOK
-CAPTION "Replace"
-FONT 8, "MS Shell Dlg"
+CAPTION "置換"
+FONT 9, "MS UI Gothic"
 BEGIN
-    LTEXT           "Fi&nd what:", -1, 4, 9, 48, 8
-    EDITTEXT        edt1, 54, 7, 114, 12, WS_GROUP | WS_TABSTOP | ES_AUTOHSCROLL
+    LTEXT           "検索する文字列(&N):", -1, 4, 9, 68, 9
+    EDITTEXT        edt1, 78, 7, 118, 12, WS_GROUP | WS_TABSTOP | ES_AUTOHSCROLL
 
-    LTEXT           "Re&place with:", -1, 4, 26, 48, 8
-    EDITTEXT        edt2, 54, 24, 114, 12, WS_GROUP | WS_TABSTOP | ES_AUTOHSCROLL
+    LTEXT           "置換後の文字列(&P):", -1, 4, 28, 68, 9
+    EDITTEXT        edt2, 78, 26, 118, 12, WS_GROUP | WS_TABSTOP | ES_AUTOHSCROLL
 
-    AUTOCHECKBOX    "Match &whole word only", chx1, 6, 46, 104, 12, WS_GROUP
-    AUTOCHECKBOX    "Match &case", chx2, 6, 62, 59, 12
-	AUTOCHECKBOX	"Wrap &around", chx3, 6, 78, 64, 12
+    AUTOCHECKBOX    "単語単位で探す(&W)", chx1, 8, 51, 104, 12, WS_GROUP
+    AUTOCHECKBOX    "大文字と小文字を区別する(&C)", chx2, 8, 67, 124, 12
+	AUTOCHECKBOX	"先頭/末尾から再検索(&A)", chx3, 6, 78, 85, 12
 
-    DEFPUSHBUTTON   "&Find Next", IDOK, 174, 4, 50, 14, WS_GROUP
-    PUSHBUTTON      "&Replace", psh1, 174, 21, 50, 14
-    PUSHBUTTON      "Replace &All", psh2, 174, 38, 50, 14
-    PUSHBUTTON      "Cancel", IDCANCEL, 174, 55, 50, 14
-    PUSHBUTTON      "&Help", pshHelp, 174, 75, 50, 14
+    DEFPUSHBUTTON   "次を検索(&F)", IDOK, 204, 4, 63, 14, WS_GROUP
+    PUSHBUTTON      "置換して次に(&R)", psh1, 204, 22, 63, 14
+    PUSHBUTTON      "すべて置換(&A)", psh2, 204, 40, 63, 14
+    PUSHBUTTON      "キャンセル", IDCANCEL, 204, 58, 63, 14
+    PUSHBUTTON      "ヘルプ(&H)", pshHelp, 204, 79, 63, 14
 END
 
